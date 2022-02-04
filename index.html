@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
-</head>
-<body>
- 
-    <div class="container">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/style.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="header">
+			<div class="header-main">
+				<div class="header__title"><h1>Typing Speed Test</h1></div>
+				<div class="header__divider">
+					<h2>Write the words given to you by the text bellow to start</h2>
+				</div>
+			</div>
+		</div>
 
-        <div class="header-main">
-<div class="header__title"><h1>Typing Speed Test</h1></div>
-<div class="header__divider"><h2>Write the words given to you by the text bellow to start</h2></div>
+		<div class="main">
+			<div class="text__title">
+				<p>The Text:</p>
+			</div>
 
-        </div>
+			<div class="text__main">
+				<p>The text</p>
+			</div>
 
+			<div class="text__area">
+				<textarea name="" id="" cols="75" rows="15"></textarea>
+			</div>
 
-    </div>
+			<div class="timer"><p>00:00:00</p></div>
+            <div class="button__container">
+            <button class="button">Reset</button>
+            </div>
+		</div>
 
-
-    
-<script src="/script.js"></script>
-</body>
+		<script src="/script.js"></script>
+	</body>
 </html>
