@@ -1,8 +1,10 @@
 const theTimer = document.querySelector(".timer");
 const testArea = document.querySelector(".text-area");
-
+const testWrapper = document.querySelector(".text__area textarea");
+const originalText = document.querySelector(".text__main").innerHTML;
 var timer = [0, 0, 0, 0];
 var timerRunning = false;
+var interval;
 
 function leadingZero(time) {
 	if (time <= 9) {
@@ -30,13 +32,31 @@ function runTimer() {
 	timer[2] = Math.floor(timer[3] - timer[1] * 100 - timer[0] * 6000);
 }
 
+function spellCheck() {
+	let textEntered = testArea.value;
+	let originTextMatch = originalText.substring(0, textEntered.length);
+
+	if (textEntered == originalText) {
+		testWrapper.style.borderColor = "green";
+
+		clearInterval(interval);
+	} else {
+		if (textEntered == originTextMatch) {
+			testWrapper.style.borderColor = "yellow";
+		} else {
+			testWrapper.style.borderColor = "red";
+		}
+	}
+}
+
 function Start() {
 	let textEnteredLength = testArea.value.length;
 
 	if (textEnteredLength == 0 && timerRunning == false) {
-		setInterval(runTimer, 10);
+		interval = setInterval(runTimer, 10);
 		timerRunning = true;
 	}
 }
 
 testArea.addEventListener("keypress", Start);
+testArea.addEventListener("keyup", spellCheck);
